@@ -13,9 +13,11 @@ class Contact extends Component {
                 error
             }
         } = field;
+
         const className = `form-group ${touched && error
             ? 'has-danger'
             : ''}`;
+
         return (
             <div className={className}>
                 <label>{field.label}</label>
@@ -59,7 +61,7 @@ function validate(values) {
     }
 
     if (!values.email) {
-        errors.email = "Necesitamos tu correo para poder conctactarte.";
+        errors.email = "Necesitamos tu correo para poder contactarte.";
     }
 
     if (!values.message) {
