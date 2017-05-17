@@ -6,3 +6,7 @@ export function submitContactForm(values, callback) {
       payload: ''
     };
 }
+
+export function fetchProducts() {
+  
+}

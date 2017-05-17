@@ -8,6 +8,7 @@ import ReduxPromise from 'redux-promise';
 import Navbar  from './components/navbar';
 import Home  from './components/home';
 import Contact  from './components/contact';
+import Products  from './containers/products';
 
 import reducers from './reducers';
 
@@ -19,8 +20,8 @@ ReactDOM.render(
       <div>
         <Navbar />
         <Switch>
-          <Route path="/producto/:name" component={Contact} />
-          <Route path="/producto" component={Contact} />
+          <Route path="/productos/:name" component={Contact} />
+          <Route path="/productos" component={Products} />
           <Route path="/contacto" component={Contact} />
           <Route path="/" component={Home} />
         </Switch>
