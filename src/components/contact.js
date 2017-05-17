@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Field, reduxForm} from 'redux-form';
-import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
-import {submitContactForm} from '../actions'
+import {connect} from 'react-redux';
+import {submitContactForm} from '../actions/';
 
 class Contact extends Component {
 
@@ -71,4 +71,9 @@ function validate(values) {
     return errors;
 }
 
-export default reduxForm({validate, form: 'ContactForm'})(connect(null, {submitContactForm})(Contact));
+export default reduxForm({
+  validate,
+  form: 'ContactForm'
+})(
+  connect(null, {submitContactForm})(Contact)
+);
