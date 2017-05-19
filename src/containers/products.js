@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {fetchProducts} from '../actions/index';
+import Product from '../components/product';
 
 class Products extends Component {
   showProducts() {
     return(
       <div>
-        This is a single product
+        <Product />
       </div>
     );
   }
@@ -14,7 +15,7 @@ class Products extends Component {
   render() {
     return(
       <div>
-        BLA
+        {this.showProducts()}
       </div>
     );
   }
