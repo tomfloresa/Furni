@@ -9,10 +9,13 @@ import Navbar  from './components/navbar';
 import Home  from './components/home';
 import Contact  from './components/contact';
 import Products  from './containers/products';
+import Product from './components/product';
 
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+
+require('../style/app.scss');
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
@@ -20,7 +23,7 @@ ReactDOM.render(
       <div>
         <Navbar />
         <Switch>
-          <Route path="/productos/:name" component={Contact} />
+          <Route path="/productos/:id" component={Product} />
           <Route path="/productos" component={Products} />
           <Route path="/contacto" component={Contact} />
           <Route path="/" component={Home} />

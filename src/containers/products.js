@@ -7,19 +7,18 @@ import _ from 'lodash';
 
 class Products extends Component {
   componentDidMount() {
-    this.props.fetchProducts();
+    const {id} = this.props.match.params;
+    this.props.fetchProducts(id);
   }
 
   showProducts() {
     return _.map(this.props.products, product => {
       return (
-        <div key={product.id}>
-          <Link to={`products/${product.id}`}>
-            <div>
-              <h3>{product.name}</h3>
-              <p>{product.description}</p>
-              <h5>{product.available ? 'Disponible' : 'No Disponible'}</h5>
-            </div>
+        <div key={product.id} className="col-lg-4 col-md-4">
+          <Link to={`productos/${product.id}`}>
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+            <h5>{product.available ? 'Disponible' : 'No Disponible'}</h5>
           </Link>
         </div>
       );
@@ -28,7 +27,7 @@ class Products extends Component {
 
   render() {
     return(
-      <div>
+      <div className="container">
         {this.showProducts()}
       </div>
     );
