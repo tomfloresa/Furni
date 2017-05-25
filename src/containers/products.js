@@ -14,11 +14,13 @@ class Products extends Component {
   showProducts() {
     return _.map(this.props.products, product => {
       return (
-        <div key={product.id} className="col-lg-4 col-md-4">
+        <div key={product.id} className="col-lg-4 col-md-4 product-showcase">
           <Link to={`productos/${product.id}`}>
-            <h3>{product.name}</h3>
-            <p>{product.description}</p>
-            <h5>{product.available ? 'Disponible' : 'No Disponible'}</h5>
+            <div className="product-showcase-inner">
+              <h3 className="text-center">{product.name}</h3>
+              <p className="product-description">{product.description}</p>
+              <h5 className="product-availability">{product.available ? 'Disponible' : 'No Disponible'}</h5>
+            </div>
           </Link>
         </div>
       );
