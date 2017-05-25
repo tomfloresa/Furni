@@ -15,8 +15,19 @@
         }
 
         .product-description {
-          font-family: $secondary-font;
-          font-size: 18px;
+            font-family: $secondary-font;
+            font-size: 18px;
+        }
+
+        .images-product-hover {
+            padding: 20px;
+            position: relative;
+
+            img {
+                width: 50%;
+                display: block;
+                margin: 0 auto;
+            }
         }
     }
 }
