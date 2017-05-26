@@ -6,6 +6,11 @@ import Product from '../components/product';
 import _ from 'lodash';
 
 class Products extends Component {
+  constructor(props) {
+    super(props);
+    this.playImages =  this.playImages.bind(this);
+  }
+
   componentDidMount() {
     const {id} = this.props.match.params;
     this.props.fetchProducts(id);
@@ -20,8 +25,14 @@ class Products extends Component {
     });
   }
 
-  playImages() {
-    console.log("TEst");
+  playImages(event) {
+    const divHolder =  event.target;
+    const images = divHolder.querySelectorAll('img');
+
+    _.forEach(images, (value, key) => {
+      console.log(value);
+    });
+
   }
 
   stopAndBackToBegin() {
@@ -34,7 +45,7 @@ class Products extends Component {
         <div key={product.id} className="col-lg-4 col-md-4 product-showcase">
           <Link to={`productos/${product.id}`}>
             <div className="product-showcase-inner">
-              <div className="images-product-hover" onMouseEnter={this.playImages} onMouseLeave={this.stopAndBackToBegin}>
+              <div className="images-product-hover" onMouseEnter={this.playImages.bind(this)} onMouseLeave={this.stopAndBackToBegin}>
                 {this.getHoverImages(product)}
               </div>
               <h3 className="text-center">{product.name}</h3>
