@@ -18,7 +18,6 @@ class Products extends Component {
 
   getHoverImages(product) {
     return _.map(product.product_images, image => {
-      console.log(image.index);
       return (
         <img src={image.image_url} alt="" key={image.image_url}/>
       );
@@ -26,13 +25,21 @@ class Products extends Component {
   }
 
   playImages(event) {
+    this.setState({
+      hovered: true
+    });
+
     const divHolder =  event.target;
     const images = divHolder.querySelectorAll('img');
 
-    _.forEach(images, (value, key) => {
-      console.log(value);
-    });
-
+    while (this.props.hovered) {
+      _.each(images, (image, index) =>{
+        image.style.display = 'none';
+        setTimeout(() => {
+          image.style.display = 'block';
+        }, 1000);
+      });
+    }
   }
 
   stopAndBackToBegin() {
@@ -45,7 +52,7 @@ class Products extends Component {
         <div key={product.id} className="col-lg-4 col-md-4 product-showcase">
           <Link to={`productos/${product.id}`}>
             <div className="product-showcase-inner">
-              <div className="images-product-hover" onMouseEnter={this.playImages.bind(this)} onMouseLeave={this.stopAndBackToBegin}>
+              <div className="images-product-hover" hovered={false} onMouseEnter={this.playImages.bind(this)} onMouseLeave={this.stopAndBackToBegin}>
                 {this.getHoverImages(product)}
               </div>
               <h3 className="text-center">{product.name}</h3>
