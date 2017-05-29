@@ -8,12 +8,29 @@ class Product extends Component {
     this.props.fetchProduct(id);
   }
 
+  getHoverImages(product) {
+    return _.map(product.product_images, image => {
+      return (
+        <img src={image.image_url} alt="" key={image.image_url}/>
+      );
+    });
+  }
+
+  getFirstHoverImage(product) {
+    console.log(product.product_images[0].image_url);
+    return (
+      <img src={product.product_images[0].image_url} alt=""/>
+    );
+  }
+
   render() {
     const {product} = this.props;
 
     return(
-      <div>
-        {product.name}
+      <div className="container">
+        <h1>{product.name}</h1>
+        <p>{product.description}</p>
+        {this.getFirstHoverImage(product)}
       </div>
     );
   }

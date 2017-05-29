@@ -24,6 +24,14 @@ class Products extends Component {
     });
   }
 
+  getFirstHoverImage(product) {
+    if (product.product_images.length >= 1) {
+      return (
+        <img src={product.product_images[0].image_url} alt=""/>
+      );
+    }
+  }
+
   playImages(event) {
     this.setState({
       hovered: true
@@ -53,7 +61,8 @@ class Products extends Component {
           <Link to={`productos/${product.id}`}>
             <div className="product-showcase-inner">
               <div className="images-product-hover" hovered={false} onMouseEnter={this.playImages.bind(this)} onMouseLeave={this.stopAndBackToBegin}>
-                {this.getHoverImages(product)}
+                {/* {this.getHoverImages(product)} */}
+                {this.getFirstHoverImage(product)}
               </div>
               <h3 className="text-center">{product.name}</h3>
               <p className="product-description">{product.description}</p>
