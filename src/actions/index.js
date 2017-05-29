@@ -23,7 +23,6 @@ export function fetchProducts() {
 
 export function fetchProduct(id) {
   const request = axios.get(`${ROOT_URL}/products/${id}`);
-
   return {
     type: FETCH_PRODUCT,
     payload: request

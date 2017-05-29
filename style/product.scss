@@ -2,7 +2,7 @@
     .product-showcase-inner {
         padding: 10px;
         margin-top: 20px;
-        max-height: 300px;
+        max-height: 400px;
         transition: all 0.3s ease;
         background-color: white;
 
@@ -17,6 +17,22 @@
         .product-description {
             font-family: $secondary-font;
             font-size: 18px;
+            font-style: italic;
+        }
+
+        .product-availability {
+          color: white;
+          padding: 10px 15px;
+          display: inline-block;
+          text-transform: uppercase;
+
+          &.available {
+            background-color: #61DD86;
+          }
+
+          &.unavailable {
+            background-color: red;
+          }
         }
 
         .images-product-hover {

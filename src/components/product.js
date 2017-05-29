@@ -17,9 +17,8 @@ class Product extends Component {
   }
 
   getFirstHoverImage(product) {
-    console.log(product.product_images[0].image_url);
     return (
-      <img src={product.product_images[0].image_url} alt=""/>
+      <img src={product.product_images[0].image_url} alt={product.name} />
     );
   }
 

@@ -51,7 +51,6 @@ class Products extends Component {
   }
 
   stopAndBackToBegin() {
-    console.log("TEst");
   }
 
   showProducts() {
@@ -65,8 +64,8 @@ class Products extends Component {
                 {this.getFirstHoverImage(product)}
               </div>
               <h3 className="text-center">{product.name}</h3>
-              <p className="product-description">{product.description}</p>
-              <h5 className="product-availability">{product.available ? 'Disponible' : 'No Disponible'}</h5>
+              <p className="product-description text-center">"{product.description}"</p>
+              <div className={product.available ? 'product-availability available' : 'btn product-availability unavailable'}>{product.available ? 'Disponible' : 'No Disponible'}</div>
             </div>
           </Link>
         </div>
