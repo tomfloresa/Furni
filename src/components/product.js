@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {fetchProduct} from '../actions';
+import Carousel from 'nuka-carousel';
 
 class Product extends Component {
   componentDidMount() {
@@ -27,9 +28,22 @@ class Product extends Component {
 
     return(
       <div className="container">
-        <h1>{product.name}</h1>
-        <p>{product.description}</p>
-        {this.getFirstHoverImage(product)}
+        <div className="row">
+          <div className="col-lg-5">
+            <Carousel>
+              {this.getHoverImages(product)}
+            </Carousel>
+          </div>
+          <div className="col-lg-7">
+            <h1>{product.name}</h1>
+            <p>{product.description}</p>
+            <ul>
+              <li>Alto: {product.height}</li>
+              <li>Ancho: {product.width}</li>
+              <li>Profundidad: {product.depth}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }
