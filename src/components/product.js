@@ -26,6 +26,10 @@ class Product extends Component {
   render() {
     const {product} = this.props;
 
+    if (!product) {
+      return (<div>Cargando producto...</div>);
+    }
+
     return(
       <div className="container">
         <div className="row">
@@ -38,9 +42,9 @@ class Product extends Component {
             <h1>{product.name}</h1>
             <p>{product.description}</p>
             <ul>
-              <li>Alto: {product.height}</li>
-              <li>Ancho: {product.width}</li>
-              <li>Profundidad: {product.depth}</li>
+              <li>Alto: {product.height ? product.height : 'Sin especificar'}</li>
+              <li>Ancho: {product.width ? product.width : 'Sin especificar'}</li>
+              <li>Profundidad: {product.depth ? product.depth : 'Sin especificar'}</li>
             </ul>
           </div>
         </div>
@@ -50,7 +54,7 @@ class Product extends Component {
 }
 
 function mapStateToProps({products}, ownProps) {
-  return {product: products[ownProps.match.params.id]}
+  return {product: products[ownProps.match.params.id]};
 }
 
 export default connect(mapStateToProps, {fetchProduct})(Product);

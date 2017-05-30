@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {fetchProducts} from '../actions/index';
+import {fetchProducts} from '../actions';
 import Product from '../components/product';
 import _ from 'lodash';
 
