@@ -6,10 +6,24 @@ export const FETCH_PRODUCT = 'FETCH_PRODUCT';
 const ROOT_URL = 'http://localhost:3000';
 
 export function submitContactForm(values, callback) {
-    return {
-      type: SUBMIT_CONTACT_FORM,
-      payload: ''
-    };
+  const {name, email, message} = values;
+  const postData = JSON.stringify({
+    mail: {
+      name,
+      email,
+      message
+    }
+  });
+  const request = axios.post(`${ROOT_URL}/mailer/contact_mailer`, postData, {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+
+  return {
+    type: SUBMIT_CONTACT_FORM,
+    payload: request
+  };
 }
 
 export function fetchProducts() {
@@ -23,6 +37,7 @@ export function fetchProducts() {
 
 export function fetchProduct(id) {
   const request = axios.get(`${ROOT_URL}/products/${id}`);
+
   return {
     type: FETCH_PRODUCT,
     payload: request

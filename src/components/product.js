@@ -33,12 +33,12 @@ class Product extends Component {
     return(
       <div className="container">
         <div className="row">
-          <div className="col-lg-5">
+          <div className="col-lg-5 col-md-5 col-sm-6">
             <Carousel>
               {this.getHoverImages(product)}
             </Carousel>
           </div>
-          <div className="col-lg-7">
+          <div className="col-lg-7 col-sm-7 col-sm-6">
             <h1>{product.name}</h1>
             <p>{product.description}</p>
             <ul>

@@ -56,7 +56,7 @@ class Products extends Component {
   showProducts() {
     return _.map(this.props.products, product => {
       return (
-        <div key={product.id} className="col-lg-4 col-md-4 product-showcase">
+        <div key={product.id} className="col-lg-4 col-md-4 col-sm-6 product-showcase">
           <Link to={`productos/${product.id}`}>
             <div className="product-showcase-inner">
               <div className="images-product-hover" hovered={false} onMouseEnter={this.playImages.bind(this)} onMouseLeave={this.stopAndBackToBegin}>

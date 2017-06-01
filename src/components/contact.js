@@ -32,8 +32,9 @@ class Contact extends Component {
     }
 
     onSubmit(values) {
+      console.log(values);
         this.props.submitContactForm(values, () => {
-            this.props.history.push('/');
+          console.log("Test");
         });
     }
 
@@ -57,15 +58,15 @@ function validate(values) {
     const errors = {};
 
     if (!values.name) {
-        errors.name = "Necesitamos tu nombre.";
+        errors.name = <div className="animated fadeInUp">Necesitamos tu nombre.</div>;
     }
 
     if (!values.email) {
-        errors.email = "Necesitamos tu correo para poder contactarte.";
+        errors.email = <div className="animated fadeInUp">Necesitamos tu correo.</div>;
     }
 
     if (!values.message) {
-        errors.message = "Favor, ingresa un mensaje.";
+        errors.message = <div className="animated fadeInUp">Favor, escribe un mensaje.</div>;
     }
 
     return errors;
