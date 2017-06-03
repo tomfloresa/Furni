@@ -12,8 +12,7 @@ class Products extends Component {
   }
 
   componentDidMount() {
-    const {id} = this.props.match.params;
-    this.props.fetchProducts(id);
+    this.props.fetchProducts();
   }
 
   getHoverImages(product) {
@@ -54,7 +53,13 @@ class Products extends Component {
   }
 
   showProducts() {
-    return _.map(this.props.products, product => {
+    let {products} = this.props;
+
+    if (!products) {
+      return (<div>Loading...</div>);
+    }
+
+    return _.map(products, product => {
       return (
         <div key={product.id} className="col-lg-4 col-md-4 col-sm-6 product-showcase">
           <Link to={`productos/${product.id}`}>
