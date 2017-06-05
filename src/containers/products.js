@@ -12,8 +12,7 @@ class Products extends Component {
   }
 
   componentDidMount() {
-    const {id} = this.props.match.params;
-    this.props.fetchProducts(id);
+    this.props.fetchProducts();
   }
 
   playImages(event) {
@@ -38,7 +37,13 @@ class Products extends Component {
   }
 
   showProducts() {
-    return _.map(this.props.products, product => {
+    let {products} = this.props;
+
+    if (!products) {
+      return (<div>Loading...</div>);
+    }
+
+    return _.map(products, product => {
       return (
         <ProductSquare key={product.id} product={product} />
       );
