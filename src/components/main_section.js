@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class MainSection extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container mar-bottom-30">
         <div className="row">
           <div className="col-md-4">
             <img width="300px" src="http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-Chair-PNG-Transparent-Image.png" alt=""/>
