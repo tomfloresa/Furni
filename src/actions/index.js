@@ -14,7 +14,6 @@ export function submitContactForm(values, callback) {
       message
     }
   });
-  console.log(postData);
   const request = axios.post(`${ROOT_URL}/mailer/contact_mailer`, postData, {
     headers: {
       "Content-Type": "application/json"

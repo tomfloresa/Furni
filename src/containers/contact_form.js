@@ -43,12 +43,16 @@ class ContactForm extends Component {
 
         return (
             <div className="container">
-              <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                <Field label="Nombre" name="name" type="text" component={this.renderField}/>
-                <Field label="Correo Electrónico" name="email" type="text" component={this.renderField}/>
-                <Field label="Mensaje" name="message" type="text" component={this.renderField}/>
-                <button type="submit" className="btn btn-primary">Submit</button>
-              </form>
+              <div className="row">
+                <div className="col-md-8 col-md-offset-2">
+                  <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                    <Field label="Nombre" name="name" type="text" component={this.renderField}/>
+                    <Field label="Correo Electrónico" name="email" type="text" component={this.renderField}/>
+                    <Field label="Mensaje" name="message" type="text" component={this.renderField}/>
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                  </form>
+                </div>
+              </div>
             </div>
         );
     }
@@ -58,15 +62,15 @@ function validate(values) {
     const errors = {};
 
     if (!values.name) {
-        errors.name = <div className="animated fadeInUp">Necesitamos tu nombre.</div>;
+        errors.name = <div className="animated fadeInUp form-error">Necesitamos tu nombre.</div>;
     }
 
     if (!values.email) {
-        errors.email = <div className="animated fadeInUp">Necesitamos tu correo.</div>;
+        errors.email = <div className="animated fadeInUp form-error">Necesitamos tu correo.</div>;
     }
 
     if (!values.message) {
-        errors.message = <div className="animated fadeInUp">Favor, escribe un mensaje.</div>;
+        errors.message = <div className="animated fadeInUp form-error">Favor, escribe un mensaje.</div>;
     }
 
     return errors;
