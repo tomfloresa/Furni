@@ -10,10 +10,13 @@ class ProductSquare extends Component {
     };
   }
 
+  componentDidMount() {
+  }
+
   getHoverImages(product) {
     return _.map(product.product_images, image => {
       return (
-        <img src={image.image_url} alt="" key={image.image_url}/>
+        <img className="hoverable-image" src={image.image_url} alt="" key={image.image_url} />
       );
     });
   }
@@ -24,6 +27,15 @@ class ProductSquare extends Component {
         <img src={product.product_images[0].image_url} alt=""/>
       );
     }
+  }
+
+  initCarrousel(event) {
+    const holder = event.target;
+    const images = holder.querySelectorAll('img');
+
+    _.forEach(images, (image) => {
+      console.log(image);
+    });
   }
 
   render() {
@@ -37,7 +49,7 @@ class ProductSquare extends Component {
       <div className="col-lg-4 col-md-4 col-sm-6 product-showcase">
         <Link to={`productos/${product.id}`}>
           <div className="product-showcase-inner">
-            <div className="images-product-hover">
+            <div className="images-product-hover" onMouseEnter={this.initCarrousel.bind(this)}>
               {this.getFirstHoverImage(product)}
             </div>
             <h3 className="text-center">{product.name}</h3>
