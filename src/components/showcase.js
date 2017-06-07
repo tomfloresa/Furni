@@ -3,15 +3,14 @@ import MainSection from './main_section';
 import HighlightedProducts from './highlighted_products';
 import Products from '../containers/products';
 
-class Home extends Component {
+class Showcase extends Component {
   render() {
     return (
       <div>
-        <MainSection/>
-        <Products furnitureToRender={3} />
+        <Products />
       </div>
     );
   }
 }
 
-export default Home;
+export default Showcase;

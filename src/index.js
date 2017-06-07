@@ -10,6 +10,7 @@ import Home  from './components/home';
 import Contact  from './components/contact';
 import Products  from './containers/products';
 import Product from './components/product';
+import Showcase from './components/showcase';
 
 import reducers from './reducers';
 
@@ -24,7 +25,7 @@ ReactDOM.render(
         <Navbar />
         <Switch>
           <Route path="/productos/:id" component={Product} />
-          <Route path="/productos" component={Products} />
+          <Route path="/productos" component={Showcase} />
           <Route path="/contacto" component={Contact} />
           <Route path="/" component={Home} />
         </Switch>

@@ -26,8 +26,15 @@ export function submitContactForm(values, callback) {
   };
 }
 
-export function fetchProducts() {
-  const request = axios.get(`${ROOT_URL}/products`);
+export function fetchProducts(numberToBring) {
+  const furnitureToBring = numberToBring;
+  let request;
+
+  if (furnitureToBring === undefined) {
+    request = axios.get(`${ROOT_URL}/products`);
+  } else {
+    request = axios.get(`${ROOT_URL}/products?furnitureLimit=${furnitureToBring}`);
+  }
 
   return {
     type: FETCH_PRODUCTS,
