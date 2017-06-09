@@ -42,7 +42,7 @@ class ProductSquare extends Component {
     const {product} = this.props;
 
     if (!this.props.product) {
-      return (<div>Waiting</div>);
+      return (<div className="spinner"></div>);
     }
 
     return (

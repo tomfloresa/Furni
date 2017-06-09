@@ -40,7 +40,7 @@ class Products extends Component {
     let {products} = this.props;
 
     if (!products) {
-      return (<div>Loading...</div>);
+      return (<div className="spinner"></div>);
     }
 
     return _.map(products, product => {

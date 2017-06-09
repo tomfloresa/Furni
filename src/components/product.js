@@ -27,7 +27,7 @@ class Product extends Component {
     const {product} = this.props;
 
     if (!product) {
-      return (<div>Cargando producto...</div>);
+      return (<div className="spinner"></div>);
     }
 
     return(
