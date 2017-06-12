@@ -54,9 +54,9 @@ class ProductSquare extends Component {
             </div>
             <h3 className="text-center">{product.name}</h3>
             <p className="product-description text-center">"{product.description}"</p>
-            <div className="text-center">
+            {/* <div className="text-center">
               <div className={product.available ? 'product-availability available' : 'btn product-availability unavailable'}>{product.available ? 'Comprar' : 'No Disponible'}</div>
-            </div>
+            </div> */}
           </div>
         </Link>
       </div>
