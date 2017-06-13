@@ -11,6 +11,7 @@ import Contact  from './components/contact';
 import Products  from './containers/products';
 import Product from './components/product';
 import Showcase from './components/showcase';
+import AdminLogin from './components/admin_login';
 
 import reducers from './reducers';
 
@@ -27,6 +28,7 @@ ReactDOM.render(
           <Route path="/productos/:id" component={Product} />
           <Route path="/productos" component={Showcase} />
           <Route path="/contacto" component={Contact} />
+          <Route path="/admin_login" component={AdminLogin} />
           <Route path="/" component={Home} />
         </Switch>
       </div>

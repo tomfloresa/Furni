@@ -1,7 +1,11 @@
 $purple: #775EFC;
+$calipso: #01D3EC;
 
 .bg-color {
   &-purple {
     background-color: $purple;
+  }
+  &-calipso {
+    background-color: $calipso;
   }
 }
