@@ -1,0 +1,14 @@
+.rotated-div {
+    width: 200%;
+    margin-left: -50%;
+    padding-left: 50%;
+    padding-right: 50%;
+    position: relative;
+    -webkit-transform: rotate(-6deg);
+    transform: rotate(-6deg);
+}
+
+.rotate-to-normal {
+  -webkit-transform: rotate(6deg);
+          transform: rotate(6deg);
+}

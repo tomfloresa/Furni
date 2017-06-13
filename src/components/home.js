@@ -10,7 +10,11 @@ class Home extends Component {
       <div>
         <MainSection/>
         <CategoriesIcons />
-        <Products furnitureToRender={3} />
+        <div className="rotated-div bg-color-purple pad-top-150 pad-bottom-150 mar-top-120">
+          <div className="rotate-to-normal">
+            <Products furnitureToRender={3} />
+          </div>
+        </div>
       </div>
     );
   }

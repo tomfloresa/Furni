@@ -11,7 +11,7 @@
         }
 
         &:hover {
-            box-shadow: 0 15px 15px -10px rgba(0,0,0,.15);
+            box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         }
 
         .product-description {
@@ -21,18 +21,18 @@
         }
 
         .product-availability {
-          color: white;
-          padding: 10px 15px;
-          display: inline-block;
-          text-transform: uppercase;
+            color: white;
+            padding: 10px 15px;
+            display: inline-block;
+            text-transform: uppercase;
 
-          &.available {
-            background-color: #61DD86;
-          }
+            &.available {
+                background-color: #61DD86;
+            }
 
-          &.unavailable {
-            background-color: red;
-          }
+            &.unavailable {
+                background-color: red;
+            }
         }
 
         .images-product-hover {

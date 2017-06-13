@@ -1,41 +1,41 @@
 //Global margins
-@for $i from 0 through 10 {
+@for $i from 0 through 20 {
   .mar-right-#{$i*10} {
     margin-right: 10px * $i;
   }
 }
-@for $i from 0 through 10 {
+@for $i from 0 through 20 {
   .mar-left-#{$i*10} {
     margin-left: 10px * $i;
   }
 }
-@for $i from 0 through 10 {
+@for $i from 0 through 20 {
   .mar-top-#{$i*10} {
     margin-top: 10px * $i !important;
   }
 }
-@for $i from 0 through 10 {
+@for $i from 0 through 20 {
   .mar-bottom-#{$i*10} {
     margin-bottom: 10px * $i;
   }
 }
 //Global paddings
-@for $i from 0 through 10 {
+@for $i from 0 through 20 {
   .pad-right-#{$i*10} {
     padding-right: 10px * $i;
   }
 }
-@for $i from 0 through 10 {
+@for $i from 0 through 20 {
   .pad-left-#{$i*10} {
     padding-left: 10px * $i;
   }
 }
-@for $i from 0 through 10 {
+@for $i from 0 through 20 {
   .pad-top-#{$i*10} {
     padding-top: 10px * $i;
   }
 }
-@for $i from 0 through 10 {
+@for $i from 0 through 20 {
   .pad-bottom-#{$i*10} {
     padding-bottom: 10px * $i;
   }

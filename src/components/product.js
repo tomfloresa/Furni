@@ -34,7 +34,7 @@ class Product extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-7 col-sm-6">
-            <Carousel>
+            <Carousel slidesToShow={1}>
               {this.getHoverImages(product)}
             </Carousel>
           </div>
