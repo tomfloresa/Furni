@@ -2,7 +2,7 @@ import axios from 'axios';
 export const SUBMIT_CONTACT_FORM = 'SUBMIT_CONTACT_FORM';
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
 export const FETCH_PRODUCT = 'FETCH_PRODUCT';
-export const SUBMIT_ADMIN_LOGIN = 'SUBMIT_ADMIN_LOGIN';
+export const SUBMIT_ADMIN_LOGIN_FORM = 'SUBMIT_ADMIN_LOGIN_FORM';
 
 const ROOT_URL = 'http://localhost:3000';
 
@@ -67,7 +67,7 @@ export function submitAdminLoginForm(values) {
   });
 
   return {
-    type: SUBMIT_ADMIN_LOGIN,
+    type: SUBMIT_ADMIN_LOGIN_FORM,
     payload: request
   }
 }
